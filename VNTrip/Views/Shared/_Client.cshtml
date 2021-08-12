@@ -1,0 +1,363 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Mừng! LDShop.vn!</title>
+
+    <link rel="shortcut icon" type="image/png" href="~/Content/image/LogoLap.png" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="~/Content/client/css/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/slicknav.min.css" rel="stylesheet" />
+    <link href="~/Content/css/nice-select.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style_menu.css" rel="stylesheet" />
+    <link href="~/Content/css/elegant-icons.css" rel="stylesheet" />
+    <link href="~/Content/css/mystyle.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="KKs20pLY"></script>
+</head>
+<body>
+    <!-- Header Section Begin -->
+    <header class="header-section" style="margin-top:-50px;margin-bottom:20px">
+        <div class="header-top" style="border:10px solid yellow;font-size:15px; background-color:yellow; margin-bottom:10px">
+            <div class="col-2">
+            </div>
+            <div class="col-1">
+                <i class="fa fa-phone" style="color:blue;text-align:right"> 0369689918</i>
+            </div>
+            <div class="col-2">
+                <i class="fa fa-envelope" style="color:blue"> puddin4399@gmail.com</i>
+            </div>
+            <div class="col-3">
+
+            </div>
+            <div class="col-2" style="color:gray;text-align:right">
+                <a href="https://www.facebook.com/hm" rel="nofollow" target="_blank" style="margin-right:20px">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com/hm" rel="nofollow" target="_blank" style="margin-right:20px">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="https://www.instagram.com/hm" rel="nofollow" target="_blank" style="margin-right:20px">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://www.youtube.com/user/hennesandmauritz" rel="nofollow" target="_blank" style="margin-right:20px">
+                    <i class="fa fa-vk"></i>
+                </a>
+                <a href="https://www.pinterest.com/hm" rel="nofollow" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col-2"></div>
+        </div><br /><br /><br />
+        <div class="header-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="mail-service" style="width:300px; height: 250px">
+                            <i><a href="/Home/Index"><img src="~/fonts/images/Thiet-ke-Logo-Jade-store-.jpg" alt="Thời trang LD"></a></i>
+                            <br /><br /><br />
+                        </div>
+                    </div>
+                    <div class="col-4" style="text-align:center; margin-left:50px; margin-top:20px; ">
+                        <br />
+                        <p style="font-size:35px; color:red; font:bold">Shop L&D</p><br />
+                        <p><b>Thời Trang Thương Hiệu</b></p>
+                        <p><b>Địa chỉ:</b> 100 Tô Hiệu, Nghĩa Tân, Cầu Giấy, HN</p>
+                    </div>
+                    <div class="col-4" style="text-align: right">
+                        <br />
+                        <div>
+                            @{
+                                if (Session["User"] == null)
+                                {
+                                    <div class="row" style=" margin-top: 16px;">
+                                        <div class="col" style="text-align: center">
+                                            <br />
+                                            <br />
+                                            <a href="/_clientLogin/Index" style="font-size:17px;color:black;margin-left:190px"><i class="fa fa-lock">Đăng nhập</i></a>
+                                        </div>
+                                        <div class="col" style="text-align: center">
+                                            <br />
+                                            <br />
+                                            <a href="/_clientLogin/register" style="font-size:17px;color:black;margin-left:16px"><i class="fa fa-lock">Đăng ký</i></a>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <nav class="nav-menu mobile-menu" style="margin-top: 40px;">
+                                        <div class="row">
+                                            <div class="col" style="text-align: center">
+                                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="font-size:17px;color:black;width: 165px;text-align:center;margin-left:23px;margin-top: 4px;">
+                                                    <i class="fa fa-lock">@Session["Name"].ToString()</i>
+                                                </a>
+                                                <ul class="dropdown-menu" style="border-top:10px solid #e6e6e6;border-bottom:10px solid #e6e6e6;top:34px;
+                                                margin-left: 35px;right: 13px;text-align:center ;background-color:#e6e6e6">
+                                                    <li>
+                                                        <a href="/_clientCustomer/AccountDetail" style="font-size:17px;font-family:'Times New Roman', Times, serif">Thông tin tài khoản</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/_clientFavoriteList/Index" style="font-size:17px;font-family:'Times New Roman', Times, serif">Danh sách yêu thích</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/_clientLogin/logout" style="font-size:17px;font-family:'Times New Roman', Times, serif">Đăng xuất</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col">
+                                                <a href="/_clientLogin/logout" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                   style="font-size:17px;width: 140px;margin-left:-18px;margin-top: 4px;font-family:'Times New Roman', Times, serif">Đổi mật khẩu</a>
+                                                <ul class="dropdown-menu" style="border-top:10px solid #e6e6e6;border-bottom:20px solid #e6e6e6;top:34px;right: 3px;text-align:center ;background-color:#e6e6e6">
+                                                    <li style="text-align:center">
+                                                        <form action="/_clientCustomer/DoiMK" method="post">
+                                                            <input required="" type="text" name="passcu" placeholder="Mật khẩu cũ" />
+                                                            <input required="" type="text" name="passmoi1" placeholder="Mật khẩu mới" style="margin-top:10px;margin-bottom:10px" />
+                                                            <input required="" type="text" name="passmoi2" placeholder="Nhập lại mật khẩu mới" />
+                                                            <button type="submit" style="margin-top:10px;background-color:cornflowerblue;
+                                                                    border:1px solid cornflowerblue;border-radius:20px">
+                                                                Đổi mật khẩu
+                                                            </button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                }
+                            }
+
+
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <br />
+                        <br />
+                        <br />
+                        <br /><p>
+                            <a href="/_clientCart/Index" class="fa fa-shopping-cart" style="color:black; font-size:17px;margin-left:-18px;margin-top: 7px;"> Giỏ hàng</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="container">
+                <nav class="nav-menu mobile-menu">
+                    <ul style="background-color:#31b3e4">
+                        <li class="col-2">
+                            <a href="/Home/Index" style="color:black;width:200px;border-left:10px">
+                                <i class="fa fa-home"></i>&nbsp;&nbsp;Trang chủ
+                            </a>
+                        </li>
+                        @*Sản phẩm*@
+                        <li class="col-2">
+                            <a style="color:black;width:200px">
+                                <i class="fa fa-laptop"></i>&nbsp;&nbsp;Sản phẩm
+                            </a>
+                            <ul class="dropdown" style="left:15px;font-size:17px;text-align:center ;background-color:orange">
+                                <li>
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="color:black">Thương Hiệu</a>
+                                    <ul class="dropdown-menu" style="left:200px;right:-150px;top:0px; background-color:orange ;font-size:17px;text-align:center">
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=Gucci">Gucci</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=COS">COS</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=Monki">Monki</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=Weekday">Weekday</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=Cheap Monday">Cheap Monday</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=H&M">L&D</a></li>
+                                        <li><a style="color:black" href="/_clientProductDetail/brand?brand=Other Stories">Other Stories</a></li>
+                                    </ul>
+                                </li>
+                                <li><a style="color:black" href="/_clientProductDetail/product?key=product">Tất Cả Sản Phẩm</a></li>
+                                <li><a style="color:black" href="/_clientProductDetail/phanloai?gro=Woman">Phụ Nữ</a></li>
+                                <li><a style="color:black" href="/_clientProductDetail/phanloai?gro=Man">Đàn Ông</a></li>
+                                <li><a style="color:black" href="/_clientProductDetail/phanloai?gro=Kid">Trẻ Em</a></li>
+                                <li><a style="color:black" href="/_clientProductDetail/phanloai?gro=Royal">Cao cấp - Sang trọng</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-2">
+                            <a href="/_clientNew/Index" style="color:black;width:200px;text-align:center"><i class="fa fa-android"></i>&nbsp;&nbsp;Tin tức</a>
+
+                        </li>
+                        <li class="col-2">
+                            <a href="#" style="color:black;width:200px;text-align:center">
+                                <i class="fa fa-address-book"></i>&nbsp;&nbsp;Blog
+                            </a>
+                            <ul class="dropdown" style="left:15px;font-size:17px;text-align:center ;background-color:orange">
+                                <li><a style="color:black" href="#">Viết Thứ Bạn Thích</a></li>
+                                <li><a style="color:black" href="https://goo.gl/maps/ZUFaiQB1wsZWt49UA">Đường Tới Cửa Hàng</a></li>
+                                <li><div class="fb-share-button" data-href="https://localhost:44387/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www2.hm.com/en_asia2/index.html" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></li>
+                            </ul>
+                        </li>
+                        <li class="col-2" style="width: 246px">
+                            <a style="color:black;width:200px;text-align:center">
+                                <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Cẩm nang
+                            </a>
+                            <ul class="dropdown" style="left:15px;font-size:17px;text-align:center ;background-color:orange">
+                                <li><a style="color:black" href="/_clientBill/Bill_cus">Lịch sử mua hàng</a></li>
+                                <li><a style="color:black" href="/_clientFavoriteList/Index">Danh sách yêu thích</a></li>
+                                <li><a style="color:black" href="/_clientBill/baohanh">Tra cứu bảo hành</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-2">
+                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="color:black;width:188px;text-align:center">
+                                <i class="fa fa-search"></i>&nbsp;&nbsp;Tìm kiếm
+                            </a>
+                            <ul class="dropdown-menu" style="border-top:10px solid #e6e6e6;border-bottom:10px solid #e6e6e6;left:15px;right:-18px;text-align:center ;background-color:#e6e6e6">
+                                <li>
+                                    <form action="/_clientProductDetail/product" method="post">
+                                        <input style="height:50px;" required="" placeholder="Nhập sản phẩm cần tìm" type="text" name="key" />
+                                        <button type="submit" style="height:25px; width:25px; border-radius:15px; background-color:#31b3e4; border-color:#31b3e4">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <div class="container-fluid body-content">
+
+        <div class="container">
+            @RenderBody()
+
+        </div>
+        <footer class="footer-section" style="margin-top:-50px">
+            <hr />
+            <div class="footer-top">
+                <div class="privacy">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col" style="background-color:aliceblue; margin:5px;border-radius:10px;margin-left: 20px;">
+                                <div class="row">
+                                    <div class="col" style="text-align-last:left">
+                                        <img src="~/Content/client/image/ico-service-1221b.png" style="width:100px;height:100px;margin-top: 14px;" />
+                                    </div>
+                                    <div class="col" style="margin-left: -162px; margin-top: 25px;">
+                                        <h3>Giao hàng miễn phí</h3>
+                                        <p>Miễn phí giao hàng trong nội thành Hà Nội</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" style="background-color:aliceblue; margin:5px;border-radius:10px">
+                                <div class="row">
+                                    <div class="col" style="text-align-last:left">
+                                        <img src="~/Content/client/image/ico-service-2221b.png" style="width:100px;height:100px;margin-top: 14px;" />
+                                    </div>
+                                    <div class="col" style="margin-left: -162px; margin-top: 25px;">
+                                        <h3>Khuyến mại</h3>
+                                        <p>Khuyến mại sản phẩm nếu đơn hàng trên 3.000.000đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" style="background-color:aliceblue; margin:5px;border-radius:10px;margin-right: 20px;">
+                                <div class="row">
+                                    <div class="col" style="text-align-last:left">
+                                        <img src="~/Content/client/image/ico-service-3221b.png" style="width:100px;height:100px;margin-top: 14px;" />
+                                    </div>
+                                    <div class="col" style="margin-left: -162px; margin-top: 13px;">
+                                        <h3>Hoàn trả lại tiền</h3>
+                                        <p>Nếu sản phẩm không đảm bảo chất lượng hoặc sản phẩm không đúng miêu tả</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row" style="margin-top:30px">
+                        <div class="col-3" style="text-align:left;font-size:20px">
+                            <b>THÔNG TIN CỬA HÀNG</b>
+                            <p style="text-align:left;font-size:15px;margin-top:10px">
+                                L&DShop.vn<br />
+                                Lennes & Dauritz <br />
+                                105 Tô Hiệu, Nghĩa Tân, Cầu Giấy, Hà Nội, Việt Nam<br />
+                                SĐT: 0369689918 <br />
+                                Email: puddin4399@gmail.com<br />
+                                Website: L&D.vn<br />
+                                Mã số doanh nghiệp: 01084563, cấp lần đầu ngày 10/01/2016<br />
+                                Sở KHĐT TP. Hà Nội cấp
+                            </p>
+                        </div>
+                        <div class="col-3" style="text-align:left;font-size:20px">
+                            <b>VỀ L&D</b>
+                            <p style="text-align:left;font-size:15px;margin-top:10px">
+                                Sự Nghiệp Tại L&D<br />
+                                Chăm sóc khách hàng<br />
+                                * Hotline: 039689918<br />
+                                * Thời gian: 7 a.m - 22 p.m<br />
+                                * Email: puddin4399@gmail.com<br />
+                                Liên hệ<br />
+                            </p>
+                        </div>
+                        <div class="col-3" style="text-align:left;font-size:20px">
+                            <b>CHÍNH SÁCH</b>
+                            <p style="text-align:left;font-size:15px;margin-top:10px">
+                                <a href="/New/phaply">Bản Quyền Của L&D <br /></a>
+                                Chính Sách Mua Hàng Từ Xa<br />
+                                Chính Sách Đặt Cọc Đơn Hàng<br />
+                                Chính Sách Giao Nhận - Đổi Trả<br />
+                                Chính Sách Bảo Hành<br />
+                                Chính Sách Bảo Mật Thông Tin<br />
+                                Đăng Ký Để Nhận Bản Tin<br />
+                            </p>
+                        </div>
+                        <div class="col-3" style="text-align:left;font-size:20px">
+                            <b>THANH TOÁN</b>
+                            <p style="text-align:left;font-size:15px;margin-top:10px">
+                                <a href="https://www.vnpayment.vn/">Thanh toán trực tuyến (Internet Banking)</a><br />
+                                Thanh toán khi nhận hàng (Ship COD)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-reserved" style="background-color:orange;border:5px solid orange;border-bottom:20px solid orange;">
+                <div class="col-lg-12">
+                    <div class="copyright-text" style="color:white">
+                        Bản Quyền &copy; L&DShop.vn
+                    </div>
+                    <div class="footer-social" align="right" style="padding-left:200px">
+                        <a href="#" style="color:white"><i class="fa fa-facebook" style="font-size:15px">  FACEBOOK </i></a>&nbsp;&nbsp;
+                        <a href="#" style="color:white"><i class="fa fa-instagram" style="font-size:15px">  INSTAGRAM </i></a>&nbsp;&nbsp;
+                        <a href="#" style="color:white"><i class="fa fa-twitter" style="font-size:15px">  TWITTER </i></a>&nbsp;&nbsp;
+                        <a href="#" style="color:white"><i class="fa fa-pinterest" style="font-size:15px">  PINTEREST </i></a>
+                    </div>
+                    <div class="payment-pic">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

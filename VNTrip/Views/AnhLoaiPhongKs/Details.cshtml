@@ -1,0 +1,75 @@
+﻿@model VNTrip.Models.AnhLoaiPhongK
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AnhLoaiPhongK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiPhongK.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiPhongK.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoaiPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoaiPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image5)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<VNTrip.Models.LoaiPhongK>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<h2>Quản Lý Loại Phòng Khách Sạn</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachSan.Name)
+        </th>
+        <th>
+            Tên Phòng
+        </th>
+        <th>
+            Tên loại phòng
+        </th>
+        <th>
+           Sức chứa
+        </th>
+        <th>
+            Bữa ăn
+        </th>
+        <th>
+           Mô tả
+        </th>
+        <th>
+           Tiện ích
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Giá khuyến mại
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachSan.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLoaiPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SucChua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuaAn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Promotion_Price)
+            </td>
+
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Hiển Thị Thông Tin", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

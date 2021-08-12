@@ -1,0 +1,73 @@
+﻿@model IEnumerable<VNTrip.Models.LoaiPhongNN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<h2>Quản Lý Loại Phòng Nhà Nghỉ</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NhaNghi.Name)
+        </th>
+        <th>
+            Tên Phòng
+        </th>
+        <th>
+            Tên Loại Phòng
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Giá 2h
+        </th>
+        <th>
+            Giá qua đêm
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaNghi.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLoaiPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price2h)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceNight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+   
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Hiển Thị Thông Tin", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

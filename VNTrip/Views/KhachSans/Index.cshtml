@@ -1,0 +1,102 @@
+﻿@model IEnumerable<VNTrip.Models.KhachSan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<h2>Quản Lý Khách Sạn</h2>
+
+<p>
+    @Html.ActionLink("Tạo Mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Khuvuc.Name)
+        </th>
+        <th>
+            Tên KS
+        </th>
+        <th>
+            Xếp Hạng
+        </th>
+        <th>
+            Dịa Chỉ
+        </th>
+        <th>
+            Số Điện Thoại
+        </th>
+        <th>
+            Mô Tả
+        </th>
+        <th>
+            Tiện Ích
+        </th>
+        <th>
+            Thông Tin
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkout)
+        </th>
+        <th>
+            Hình Ảnh
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Khuvuc.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Group_Pro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thongtin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Checkin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Checkout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.created_at)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updated_at)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Hiển Thị Thông Tin", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
